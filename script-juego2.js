@@ -11,12 +11,12 @@ const message = document.getElementById('message');
 
 // Datos de los cuadros de respuesta
 const boxesData = [
-    { match: 'escucha', text: 'Escucha lo que el paciente dice y expresa. "Ve a los ojos o a la cara, asiente con la cabeza, resume los puntos clave, di lo que sí quiso decir el paciente con otras palabras."' },
-    { match: 'pregunta', text: 'Pregunta ¿Qué es importante para el paciente de acuerdo al momento clave? Preguntar con curiosidad y humildad. Mostrar escucha activa y absoluto respeto. No juzgar, manifestar confianza, indagar su punto de vista.' },
-    { match: 'interpreta', text: 'Interpreta lo que veo, lo que escucho, lo que le pregunto al paciente. Evita estereotipos, preguntar al paciente si estoy entendiendo lo que quiero decir.' },
-    { match: 'explica', text: 'Explica lo que requiere saber, lo que está sucediendo, o lo que necesita decidir. Escoger el mejor entorno, pedir permiso, identificar hasta dónde explicar, no usar lenguaje técnico, mostrar comprensión de la situación.' },
-    { match: 'sonrie', text: 'Sonríe honestamente, mostrando comprensión y amabilidad. Reírse un poco, lentamente, y sin ruido.' },
-    { match: 've', text: 'Ve atentamente. Observa al paciente con atención, muestra interés genuino y empatía.' }
+    { match: 'escucha', text: '**** lo que el paciente dice y expresa. "Ve a los ojos o a la cara, asiente con la cabeza, resume los puntos clave, di lo que sí quiso decir el paciente con otras palabras."' },
+    { match: 'pregunta', text: '**** ¿Qué es importante para el paciente de acuerdo al momento clave? Preguntar con curiosidad y humildad. Mostrar escucha activa y absoluto respeto. No juzgar, manifestar confianza, indagar su punto de vista.' },
+    { match: 'interpreta', text: '**** lo que veo, lo que escucho, lo que le pregunto al paciente. Evita estereotipos, preguntar al paciente si estoy entendiendo lo que quiero decir.' },
+    { match: 'explica', text: '**** lo que requiere saber, lo que está sucediendo, o lo que necesita decidir. Escoger el mejor entorno, pedir permiso, identificar hasta dónde explicar, no usar lenguaje técnico, mostrar comprensión de la situación.' },
+    { match: 'sonrie', text: '**** honestamente, mostrando comprensión y amabilidad. Reírse un poco, lentamente, y sin ruido.' },
+    { match: 've', text: '**** atentamente. Observa al paciente con atención, muestra interés genuino y empatía.' }
 ];
 
 // Función para generar los cuadros de respuesta de manera aleatoria
