@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filosofía Organizacional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>FILOSOFÍA ORGANIZACIONAL</h1>
+    <div class="game-container">
+        <div class="drag-container" id="drag-container">
+            <div data-id="mision" class="drag-item" draggable="true">Misión</div>
+            <div data-id="vision" class="drag-item" draggable="true">Visión</div>
+            <div data-id="valores" class="drag-item" draggable="true">Valores</div>
+            <div data-id="proposito" class="drag-item" draggable="true">Propósito</div>
+        </div>
+        <div class="drop-container">
+            <div data-match="mision" class="drop-zone">Privilegiar la vida</div>
+            <div data-match="vision" class="drop-zone">
+                Queremos ser la opción inteligente del sector, gracias a pacientes que confían al sentirse humanamente acompañados, médicos intensamente leales, convenios basados en mutuo beneficio y equipo entusiasta y comprometido de corazón.
+            </div>
+            <div data-match="valores" class="drop-zone">Seguridad, Excelencia en la atención, Efectividad</div>
+            <div data-match="proposito" class="drop-zone">Estar cerca de ti para cuidarte</div>
+        </div>
+    </div>
+    <div id="message" class="message"></div>
+    <div class="buttons-container">
+        <button id="retry-button" class="retry-button">Reintentar</button>
+        <button id="next-button" class="next-button">Siguiente</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hablemos de CAHUSA</title>
+    <link rel="stylesheet" href="styles-juego2.css">
+</head>
+<body>
+    <h1>HABLEMOS DE CAHUSA</h1>
+    <div class="text-container">
+        <p class="subtitle">
+            CAHUSA es una certificación que asegura la mejor atención humana a sus pacientes y familiares.
+        </p>
+        <p class="subtitle">
+            La atención humana es "una relación profesional honesta, amable, confiable y respetuosa que crea confianza mutua, y reconoce y acepta al otro como una persona plena con características individuales."
+        </p>
+        <p class="subtitle">
+            El código humano es el "conjunto de acciones explícitas que conducen hacia una atención humana para crear confianza en los pacientes y evitarles daños" (E. Ruleas).
+        </p>
+        <p class="subtitle">
+            Cada acción del código humano tiene una característica especial.
+        </p>
+        <p class="instruction">
+            Para continuar, une los círculos correspondientes con el texto. Si la línea se marca de rojo, entonces repite. Si la línea se marca del color del círculo, está correcto.
+        </p>
+    </div>
+    <div class="game-container">
+        <!-- Contenedor de círculos -->
+        <div class="circles-column">
+            <div class="circle-item">
+                <div class="circle" data-id="ve" style="background-color: #014488;"></div>
+                <div class="circle-text" style="color: #014488;">VE ATENTAMENTE</div>
+            </div>
+            <div class="circle-item">
+                <div class="circle" data-id="escucha" style="background-color: #d21148;"></div>
+                <div class="circle-text" style="color: #d21148;">ESCUCHA ACTIVAMENTE</div>
+            </div>
+            <div class="circle-item">
+                <div class="circle" data-id="pregunta" style="background-color: #da8243;"></div>
+                <div class="circle-text" style="color: #da8243;">PREGUNTA HUMILDEMENTE</div>
+            </div>
+        </div>
+        <div class="circles-column">
+            <div class="circle-item">
+                <div class="circle" data-id="interpreta" style="background-color: #7d1423;"></div>
+                <div class="circle-text" style="color: #7d1423;">INTERPRETA OBJETIVAMENTE</div>
+            </div>
+            <div class="circle-item">
+                <div class="circle" data-id="explica" style="background-color: #9bcc71;"></div>
+                <div class="circle-text" style="color: #9bcc71;">EXPLICA CLARAMENTE</div>
+            </div>
+            <div class="circle-item">
+                <div class="circle" data-id="sonrie" style="background-color: #326e7e;"></div>
+                <div class="circle-text" style="color: #326e7e;">SONRÍE HONESTAMENTE</div>
+            </div>
+        </div>
+        <!-- Contenedor de cuadros de respuesta -->
+        <div class="boxes-container">
+            <!-- Los cuadros de respuesta se generarán aleatoriamente -->
+        </div>
+    </div>
+    <!-- Contenedor para mostrar aciertos y errores -->
+    <div class="results-container">
+        <div id="results" class="results"></div>
+    </div>
+    <!-- Botón "Repetir" debajo de los cuadros de respuesta -->
+    <div class="repeat-button-container">
+        <button id="repeat-button" class="repeat-button">Repetir</button>
+    </div>
+    <div id="message" class="message"></div>
+    <script src="script-juego2.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 20px 0;
+    color: #79b0df;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 20px;
+    word-wrap: break-word;
+    max-width: 90%;
+}
+
+/* Contenedor de texto con fondo azul */
+.text-container {
+    background-color: #003a8e; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espaciado inferior */
+    max-width: 800px; /* Ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+    color: white; /* Color del texto general */
+    text-align: justify; /* Texto justificado */
+    line-height: 1.6; /* Altura de línea */
+}
+
+/* Estilo para el texto general dentro del contenedor */
+.text-container p {
+    margin-bottom: 15px; /* Espaciado entre párrafos */
+}
+
+/* Estilo para la instrucción en amarillo */
+.text-container .instruction {
+    color: yellow; /* Color amarillo */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 0; /* Sin margen inferior */
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.circles-container, .boxes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 45%;
+}
+
+.circle {
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.circle.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.box {
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+}
+
+.check-button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.check-button:hover {
+    background-color: #218838;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.correct {
+    border-color: green;
+}
+
+.incorrect {
+    border-color: red;
+}
+
+.line {
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    transform-origin: 0 0;
+    pointer-events: none;
+}
+
+.attempts {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.repeat-button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.repeat-button:hover {
+    background-color: #0056b3;
+}
+
+.circle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.circle-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+}

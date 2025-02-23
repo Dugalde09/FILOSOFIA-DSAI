@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 20px 0;
+    color: #79b0df;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 20px;
+    word-wrap: break-word;
+    max-width: 90%;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.drag-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.drop-container {
+    width: 90%;
+    max-width: 500px;
+}
+
+.drag-item, .drop-zone {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    word-wrap: break-word;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-item {
+    background-color: #0c4187;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.drag-item.dragging {
+    background-color: #63a3db;
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.correct {
+    border-color: green;
+    background-color: #e6ffe6;
+}
+
+.incorrect {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+.retry-button, .next-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.retry-button {
+    background-color: #007bff;
+}
+
+.retry-button:hover {
+    background-color: #0056b3;
+}
+
+.next-button {
+    background-color: #28a745;
+    display: none;
+}
+
+.next-button:hover {
+    background-color: #218838;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .drag-container {
+        grid-template-columns: 1fr;
+    }
+
+    .drag-item, .drop-zone {
+        padding: 8px;
+        font-size: 0.9rem;
+        min-height: 50px;
+    }
+
+    .retry-button, .next-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
