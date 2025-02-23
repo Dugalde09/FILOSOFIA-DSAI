@@ -2,9 +2,6 @@
 let selectedCircle = null;
 let line = null;
 let isDrawing = false;
-const attemptsDisplay = document.createElement('div'); // Indicador de intentos
-attemptsDisplay.classList.add('attempts');
-document.body.appendChild(attemptsDisplay);
 
 // Seleccionar un círculo
 const circles = document.querySelectorAll('.circle');
@@ -38,13 +35,14 @@ function generateRandomBoxes() {
 // Generar los cuadros de respuesta al cargar la página
 generateRandomBoxes();
 
-circles.forEach(circle => {
-    circle.addEventListener('mousedown', startDrawing);
-    circle.addEventListener('touchstart', startDrawing);
-});
-
-boxesContainer.addEventListener('mouseup', stopDrawing);
-boxesContainer.addEventListener('touchend', stopDrawing);
+// Función para obtener la posición exacta de un elemento
+function getElementPosition(element) {
+    const rect = element.getBoundingClientRect();
+    return {
+        x: rect.left + window.scrollX + rect.width / 2,
+        y: rect.top + window.scrollY + rect.height / 2
+    };
+}
 
 // Función para comenzar a dibujar la línea
 function startDrawing(e) {
@@ -60,12 +58,9 @@ function startDrawing(e) {
     document.body.appendChild(line);
 
     // Posición inicial de la línea
-    const rect = selectedCircle.getBoundingClientRect();
-    const startX = rect.left + rect.width / 2;
-    const startY = rect.top + rect.height / 2;
-
-    line.style.left = `${startX}px`;
-    line.style.top = `${startY}px`;
+    const circlePos = getElementPosition(selectedCircle);
+    line.style.left = `${circlePos.x}px`;
+    line.style.top = `${circlePos.y}px`;
 
     // Actualizar la línea mientras se mueve el mouse o el dedo
     document.addEventListener('mousemove', drawLine);
@@ -79,12 +74,9 @@ function drawLine(e) {
     const clientX = e.clientX || e.touches[0].clientX;
     const clientY = e.clientY || e.touches[0].clientY;
 
-    const rect = selectedCircle.getBoundingClientRect();
-    const startX = rect.left + rect.width / 2;
-    const startY = rect.top + rect.height / 2;
-
-    const deltaX = clientX - startX;
-    const deltaY = clientY - startY;
+    const circlePos = getElementPosition(selectedCircle);
+    const deltaX = clientX - circlePos.x;
+    const deltaY = clientY - circlePos.y;
     const length = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
@@ -107,16 +99,10 @@ function stopDrawing(e) {
     const boxMatch = box.dataset.match;
 
     // Calcular la posición final de la línea
-    const boxRect = box.getBoundingClientRect();
-    const endX = boxRect.left + boxRect.width / 2;
-    const endY = boxRect.top + boxRect.height / 2;
-
-    const circleRect = selectedCircle.getBoundingClientRect();
-    const startX = circleRect.left + circleRect.width / 2;
-    const startY = circleRect.top + circleRect.height / 2;
-
-    const deltaX = endX - startX;
-    const deltaY = endY - startY;
+    const boxPos = getElementPosition(box);
+    const circlePos = getElementPosition(selectedCircle);
+    const deltaX = boxPos.x - circlePos.x;
+    const deltaY = boxPos.y - circlePos.y;
     const length = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
@@ -166,3 +152,13 @@ function resetSelections() {
 
 // Evento para el botón "Repetir"
 repeatButton.addEventListener('click', resetSelections);
+
+// Eventos para iniciar el dibujo de líneas
+circles.forEach(circle => {
+    circle.addEventListener('mousedown', startDrawing);
+    circle.addEventListener('touchstart', startDrawing);
+});
+
+// Eventos para detener el dibujo de líneas
+boxesContainer.addEventListener('mouseup', stopDrawing);
+boxesContainer.addEventListener('touchend', stopDrawing);
